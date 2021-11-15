@@ -1,18 +1,23 @@
-/* let kilometros = parseInt(prompt("Ingrese la distancia (km) del destino deseado"))
+                        //FUNCIONES DE PEDIDO DE DISTANCIA Y DOLARIZACIÓN
+
+let kilometros = parseInt(prompt("Ingrese la distancia (km) del destino deseado"))
 let dolar = 195
-let pesoKm = 10
+let pesoKm = 10 
 
 const dolarizar = (a, b) => a/b;
 const distancia = (c, d) => c*d;
 
-function mostrar (monto){
-    document.write(`Su viaje tiene una cotización de ${monto} dolares.`);
-}
-
 let cotizacion = dolarizar (distancia(kilometros, pesoKm), dolar).toFixed(2); 
 
-mostrar(cotizacion);
+                //CREACION DE UN PARRAFFO CON LA COTIZACIÓN DEL VIAJE
 
+
+let show = document.createElement("p");
+show.innerHTML = "Su viaje cuesta USD$ " + cotizacion;
+document.body.appendChild(show);
+
+
+/*
 let personas = parseInt(prompt("Cuantas personas van a ser?"))
 let dias = parseInt(prompt("Cuantos días piensa alojarse?"))
 let habitacion = parseInt(prompt("Cuantas habitaciones necesitas?"))
@@ -30,8 +35,7 @@ function Disponibilidad (d, p, h) {
 
 const hotel = new Disponibilidad (dias, personas, habitacion);
 
-hotel.reserva(); */
-
+hotel.reserva();*/
                     // ARRAY DE OBJETOS CON LAS HABITACIONES
 
 const arrayHabitacion = [ {nombre: "SIMPLE", capacidad: 1, disponible: "Hay disponilidad"},
@@ -39,17 +43,19 @@ const arrayHabitacion = [ {nombre: "SIMPLE", capacidad: 1, disponible: "Hay disp
                     {nombre: "TRIPLE", capacidad: 3, disponible: "No hay disponilidad"},
                     {nombre: "CUADRUPLE", capacidad: 4, disponible: "Hay disponilidad"},
                     {nombre: "SUITE", capacidad: 2, disponible: "Hay disponilidad"},
-                    {nombre: "DUPLEX", capacidad: 4, disponible: "Hay disponilidad"},
-]
+                    {nombre: "DUPLEX", capacidad: 4, disponible: "Hay disponilidad"}];
 
-                    //MUESTRA LAS HABITACIONES DISPONIBLES
+                    //AGREGA DIV CON LAS HABITACIONES DISPONIBLES
 
-  for (const dia of arrayHabitacion){
-    document.write(dia.nombre + ": ");
-    document.write(dia.disponible + ". ");
+  for (const room of arrayHabitacion){
+
+    let contenedor = document.createElement("div");
+    
+    contenedor.innerHTML = `<p> Tipos de habitaciones: ${room.nombre} </p>
+                            <p> Disponibilidad: ${room.disponible} </p>
+                            <br>`;
+    document.body.appendChild(contenedor);
 }
         //ORDENAMIENTO DESCENDENTE DE ACUERDO A LA CAPACIDAD DE PERSONAS
 
-arrayHabitacion.sort( (a, b) => (a.capacidad > b.capacidad) ? 1 : -1);
-console.log(arrayHabitacion);
-                
+ //arrayHabitacion.sort( (a, b) => (a.capacidad > b.capacidad) ? 1 : -1);

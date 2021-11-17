@@ -1,24 +1,21 @@
-                        //FUNCIONES DE PEDIDO DE DISTANCIA Y DOLARIZACIÓN
+                          // SELECT CON PRECIO DEL PASAJE
 
-let kilometros = parseInt(prompt("Ingrese la distancia (km) del destino deseado"))
-let dolar = 195
-let pesoKm = 10 
+const selectElement = document.querySelector('#select');
 
-const dolarizar = (a, b) => a/b;
-const distancia = (c, d) => c*d;
-
-let cotizacion = dolarizar (distancia(kilometros, pesoKm), dolar).toFixed(2); 
+selectElement.addEventListener('change', (event) => {
+    const result = document.querySelector('#resultado');
+    result.textContent = `Su viaje cuesta ARS$ ${event.target.value}`;});
 
                 //CREACION DE UN PARRAFFO CON LA COTIZACIÓN DEL VIAJE
 
-
+/* 
 let show = document.createElement("p");
 show.innerHTML = "Su viaje cuesta USD$ " + cotizacion;
-document.body.appendChild(show);
+document.body.appendChild(show); */
 
 
-/*
-let personas = parseInt(prompt("Cuantas personas van a ser?"))
+
+/* let personas = parseInt(prompt("Cuantas personas van a ser?"))
 let dias = parseInt(prompt("Cuantos días piensa alojarse?"))
 let habitacion = parseInt(prompt("Cuantas habitaciones necesitas?"))
 
@@ -35,7 +32,34 @@ function Disponibilidad (d, p, h) {
 
 const hotel = new Disponibilidad (dias, personas, habitacion);
 
-hotel.reserva();*/
+hotel.reserva(); */
+
+                    //BOTON DE + INFO
+
+let btnVerMas = document.querySelector("#btn-verMas");
+                btnVerMas.addEventListener('click', agregarInfo)
+
+function agregarInfo (){
+    let infoCompleta = document.createElement("p");
+    infoCompleta.innerHTML =`<p> Esta es toda la informacion completa que tenemos por el momento</p>
+                            <hr>`;
+    document.querySelector("#masInfo").appendChild(infoCompleta);
+    btnVerMas.removeEventListener('click', agregarInfo, false)
+}
+
+
+
+let btnVerMas1 = document.querySelector("#btn-verMas1");
+                btnVerMas1.addEventListener('click', verMasInfo)
+
+function verMasInfo (){
+    let informacion = document.createElement("p");
+    informacion.innerHTML =`<p> La orientación de la habitación es dirección al oeste, mirando a los distintos cerros</p>
+                            <hr>`;
+    document.querySelector("#infoHabitacion").appendChild(informacion);
+    btnVerMas1.removeEventListener('click', verMasInfo, false)
+}
+
                     // ARRAY DE OBJETOS CON LAS HABITACIONES
 
 const arrayHabitacion = [ {nombre: "SIMPLE", capacidad: 1, disponible: "Hay disponilidad"},
@@ -47,15 +71,11 @@ const arrayHabitacion = [ {nombre: "SIMPLE", capacidad: 1, disponible: "Hay disp
 
                     //AGREGA DIV CON LAS HABITACIONES DISPONIBLES
 
-  for (const room of arrayHabitacion){
-
-    let contenedor = document.createElement("div");
-    
-    contenedor.innerHTML = `<p> Tipos de habitaciones: ${room.nombre} </p>
-                            <p> Disponibilidad: ${room.disponible} </p>
-                            <br>`;
-    document.body.appendChild(contenedor);
-}
-        //ORDENAMIENTO DESCENDENTE DE ACUERDO A LA CAPACIDAD DE PERSONAS
-
- //arrayHabitacion.sort( (a, b) => (a.capacidad > b.capacidad) ? 1 : -1);
+                    for (const room of arrayHabitacion){
+                        
+                        let contenedor = document.createElement("div");
+                        
+                        contenedor.innerHTML = `<p> Tipos de habitaciones: ${room.nombre} </p>
+                        <p> Disponibilidad: ${room.disponible} </p>
+                        <br>`;
+                        document.querySelector('span').appendChild(contenedor);                    }

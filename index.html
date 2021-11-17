@@ -50,7 +50,9 @@
               <div class="col">
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, corrupti provident optio maiores expedita inventore quam natus cupiditate perferendis ducimus similique tempora quas quis veritatis. Veniam qui ratione in eaque.</p>
               </div>
+              <div class="col" id="masInfo"></div>
             </div>
+            <button id="btn-verMas">+ info</button>
           </div>
           
           <div class="card-group">
@@ -95,11 +97,31 @@
               </div>
             </div>
           </div>
+         
+<h2>VALOR DEL PASAJE AEREO:</h2>
 
-          <span><img src="./archivos multimedia/hotel3.jpg" alt="hotel afuera">
+          <div class="row">
+              <div class="col-sm-6 col-md-6">
+                  <select id="select" class="form-select">
+                    <option selected>Seleccione el aeropuerto</option>
+                    <option value="3800">EZEIZA</option>
+                    <option value="7650">CÓRDOBA</option>
+                    <option value="9400">ROSARIO</option>
+                  </select> 
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <p id="resultado" ></p>
+              </div>
+          </div>
+          
+
+        <span>
+          <img src="./archivos multimedia/hotel3.jpg" alt="hotel afuera">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, labore cumque. Cumque hic mollitia dolore soluta nisi eaque repudiandae ex, sequi quod dolores officiis possimus nesciunt quisquam! Quis, nemo consectetur.</p>
           <img src="./archivos multimedia/hotel1.jpg" alt="hotel balcon">
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex eaque qui natus nesciunt placeat magni eos voluptate, dignissimos tempore libero reiciendis sint amet blanditiis expedita cupiditate, maxime distinctio ipsa incidunt?</p> 
+          <button id="btn-verMas1">+ DETALLES</button>
+          <div id="infoHabitacion"></div>
         </span>
 
     </main>

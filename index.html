@@ -9,34 +9,37 @@
     <title>Document</title>
 </head>
 <body>
-     <header>
-        <ul class="nav justify-content-center bg-danger p-2 text-dark bg-opacity-25">
+    <header>
+        <ul class="nav justify-content-center align-content-center p-1 text-Captions">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">INICIO</a>
+              <a class="nav-link active text-white" aria-current="page" href="#">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">HABITACIONES</a>
+              <a class="nav-link text-white" href="">RESERVAS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">RESERVAS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">CONTACTO</a>
+              <a class="nav-link text-white" href="">CONTACTO</a>
             </li>
           </ul>
     </header>
     <main>
 
-    <div class="card bg-dark text-white border-0">
-      <img src="./archivos multimedia/bariloche2.jpg" class="card-img" alt="vista panoramica" height="500px">
-      <div class="card-img-overlay">
-        <h2 class="card-title position-absolute bottom-0 start-0">SAN CARLOS DE BARILOCHE</h2>
-        <p class="card-text text-dark">La ciudad de San Carlos de Bariloche, ubicada en la provincia de Río Negro, se destaca por ser parte de una parada obligatoria para cualquier turista que desee disfrutar la Patagonia</p>
-      </div>
-    </div>
+                                   <!--- IMAGEN PRINCIPAL --->
 
-      <h1>BIENVENIDOS AL HOTEL ARRAYANES</h1>
-        <div class="container">
+     <div id="imagen" class="card bg-Captions border-0 ">
+      <div class="card">
+      <img src="./archivos multimedia/bariloche.jpg" class="card-img" alt="centro bariloche">
+      </div>
+      <div class="card-img-overlay">
+      <h2 id="tituloImagen" class="card-title position-absolute bottom-0 rounded">SAN CARLOS DE BARILOCHE</h2>
+      </div>
+     </div>
+     
+     <hr>
+                                  <!--- INFORMACIÓN PRINCIPAL --->                                     
+
+     <div class="container">
+          <h1>BIENVENIDOS AL HOTEL ARRAYANES</h1>
             <div class="row row-cols-2">
               <div class="col">
                   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores voluptatibus labore cupiditate quae ab quis beatae! Necessitatibus, doloribus. Mollitia eius beatae hic atque! Vel ex exercitationem unde, magnam molestias modi.</p>
@@ -50,85 +53,169 @@
               <div class="col">
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, corrupti provident optio maiores expedita inventore quam natus cupiditate perferendis ducimus similique tempora quas quis veritatis. Veniam qui ratione in eaque.</p>
               </div>
-              <div class="col" id="masInfo"></div>
+              <div class="col" id="masInfo">
+              </div>
             </div>
             <button id="btn-verMas">+ info</button>
-          </div>
-          
-          <div class="card-group">
+     </div>
+     <hr>
+                                  <!--- MENÚ DE COTIZACIÓN --->
+      <div id="menuCotizacion" class="container">
+        <div class="row border-Captions">
+            <h2>VALOR DEL PASAJE AEREO: Desde que aeropuerto arriba?</h2>
+              <div class="col-6">
+                  <select id="select" class="form-select">
+                    <option selected value="">Seleccione el aeropuerto</option>
+                    <option value="3800">EZEIZA</option>
+                    <option value="7650">CÓRDOBA</option>
+                    <option value="9400">ROSARIO</option>
+                  </select>
+              </div>
+              <div class="col-5 alert alert-light" id="resultado" role="alert">
+              </div>
+        </div>
+      </div>
+     <hr>
+
+                                      <!---CALENDARIO---->
+
+     <section class=" container-fluid ">
+      <div class="container bg-warning col-xl-6 col-sm-6"> 
+          <form class="row d-flex justify-content-center align-content-center">         
+              <div class=" col-xl-4 col-sm-6">                                
+                  <label for="check-in">Check-in</label>
+                  <input class="form-control form-control-sm" type="date" name="check-in" id="check-in">   
+              </div>                        
+              <div class=" col-xl-4 col-sm-6">                                
+                  <label for="check-out">Check-out</label>
+                  <input class="form-control form-control-sm" type="date" name="check-out" id="check-out"> 
+              </div>
+               <div class="form-row form-group flex-column align-items-center align-self-center col-xl-2 col-sm-6">                                
+                  <label for="guests">Guests</label>
+                  <select name="guests" id="pasajeros" class="form-control-sm" required=""><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+              </div>
+              <div class="align-self-center col-xl-1 col-sm-6">
+                  <a href="#"><button onclick="pasajeroDatos()" id="book" type="button" class="btn btn-success btn-sm">Search</button></a>
+              </div>
+          </form>
+      </div>
+  </section>
+  <hr>
+                          <!--- IMAGENES DE LAS HABITACIONES Y DESCRIPCIÓN --->
+
+     <div class="card-group">
             <div class="card">
-              <img src="archivos multimedia/hotel.jpg" class="card-img-top" alt="...">
+              <img src="archivos multimedia/hotel.jpg" class="card-img-top" alt="hotel">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
+
             </div>
             <div class="card">
-              <img src="archivos multimedia/hall.jpg" class="card-img-top" alt="...">
+              <img src="archivos multimedia/hall.jpg" class="card-img-top" alt="hall">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
+
             </div>
             <div class="card">
-              <img src="archivos multimedia/habitacion1.jpg" class="card-img-top" alt="...">
+              <img src="archivos multimedia/habitacion1.jpg" class="card-img-top" alt="habitacion1">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
+
             </div>
             <div class="card">
-              <img src="archivos multimedia/hotel2.jpg" class="card-img-top" alt="...">
+              <img src="archivos multimedia/hotel2.jpg" class="card-img-top" alt="hotel2">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
+
             </div>
-          </div>
-         
-<h2>VALOR DEL PASAJE AEREO:</h2>
+     </div>
+     <hr>
 
-          <div class="row">
-              <div class="col-sm-6 col-md-6">
-                  <select id="select" class="form-select">
-                    <option selected>Seleccione el aeropuerto</option>
-                    <option value="3800">EZEIZA</option>
-                    <option value="7650">CÓRDOBA</option>
-                    <option value="9400">ROSARIO</option>
-                  </select> 
-              </div>
-              <div class="col-sm-6 col-md-6">
-                <p id="resultado" ></p>
-              </div>
-          </div>
-          
+                            <!--- DESCRIPCIÓN ADICIONAL--->
 
-        <span>
-          <img src="./archivos multimedia/hotel3.jpg" alt="hotel afuera">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, labore cumque. Cumque hic mollitia dolore soluta nisi eaque repudiandae ex, sequi quod dolores officiis possimus nesciunt quisquam! Quis, nemo consectetur.</p>
-          <img src="./archivos multimedia/hotel1.jpg" alt="hotel balcon">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex eaque qui natus nesciunt placeat magni eos voluptate, dignissimos tempore libero reiciendis sint amet blanditiis expedita cupiditate, maxime distinctio ipsa incidunt?</p> 
-          <button id="btn-verMas1">+ DETALLES</button>
-          <div id="infoHabitacion"></div>
-        </span>
+     <div class="container">
+        <div class="card rounded-3">
+         <img src="./archivos multimedia/hotel3.jpg" alt="hotel afuera">
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, labore cumque. Cumque hic mollitia dolore soluta nisi eaque repudiandae ex, sequi quod dolores officiis possimus nesciunt quisquam! Quis, nemo consectetur.</p>
+        </div>
+        <div class="card">
+         <img src="./archivos multimedia/lago.jpg" alt="hotel balcon">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex eaque qui natus nesciunt placeat magni eos voluptate, dignissimos tempore libero reiciendis sint amet blanditiis expedita cupiditate, maxime distinctio ipsa incidunt?</p>
+        </div>
+        <div id="infoHabitacion">
+         <button id="btn-verMas1">+ DETALLES</button>
+        </div>
+        <div id="rooms">
+          <button id="btn-verDetalles">VER HABITACIONES DISPONIBLES</button>
+        </div>   
+     </div>
 
-    </main>
+                          <!--- CAROUSEL DE ACTIVIDADES Y EXCURSIONES--->
+
+
+    <section id="carouselSection" class="container">
+      <h2>ACTIVIDADES Y EXCURSIONES</h2>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./archivos multimedia/actividad.jpg" class="d-block w-100" alt="Cerro catedral">
+            </div>
+            <div class="carousel-item">
+              <img src="./archivos multimedia/actividad1.jpg" class="d-block w-100" alt="Lago Nahuel Huapi">
+            </div>
+            <div class="carousel-item">
+              <img src="./archivos multimedia/actividad2.jpg" class="d-block w-100" alt="Catamaran">
+            </div>
+            <div class="carousel-item">
+              <img src="./archivos multimedia/actividad3.jpg" class="d-block w-100" alt="Rafting">
+            </div>
+            <div class="carousel-item">
+              <img src="./archivos multimedia/actividad4.jpg" class="d-block w-100" alt="Canopy">
+            </div>
+            <div class="carousel-item">
+              <img src="./archivos multimedia/actividad5.jpg" class="d-block w-100" alt="Parques Naturales">
+            </div>
+            <div class="carousel-item">
+              <img src="./archivos multimedia/actividad6.jpg" class="d-block w-100" alt="Centro Civico">
+            </div>
+            <div class="carousel-item">
+              <img src="./archivos multimedia/actividad7.jpg" class="d-block w-100" alt="Fabrica de chocolates">
+            </div>
+            <div class="carousel-item">
+              <img src="./archivos multimedia/actividad8.jpg" class="d-block w-100" alt="Chocolates">
+            </div>
+        </div>
+        <button class="carousel-control-prev" id="botonPrev"  type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </button>
+        <button class="carousel-control-next" id="botonNext" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </button>
+    </div>
+    </section>
+
+  </main>
+
     <footer>
-        <p>UBICACIÓN: Av San Martin 123, San Carlos de Bariloche</p>
+        <div id="divRedes">
+          <ion-icon name="logo-facebook"></ion-icon>
+          <ion-icon name="logo-instagram"></ion-icon>
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </div>
+        
     </footer>
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

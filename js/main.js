@@ -8,13 +8,6 @@ selectElement.addEventListener('change', (event) => {
 
                 //CREACION DE UN PARRAFFO CON LA COTIZACIÓN DEL VIAJE
 
-/* 
-let show = document.createElement("p");
-show.innerHTML = "Su viaje cuesta USD$ " + cotizacion;
-document.body.appendChild(show); */
-
-
-
 /* let personas = parseInt(prompt("Cuantas personas van a ser?"))
 let dias = parseInt(prompt("Cuantos días piensa alojarse?"))
 let habitacion = parseInt(prompt("Cuantas habitaciones necesitas?"))
@@ -34,27 +27,27 @@ const hotel = new Disponibilidad (dias, personas, habitacion);
 
 hotel.reserva(); */
 
-                    //BOTON DE + INFO
+                    //BOTON DE +INFO
 
 let btnVerMas = document.querySelector("#btn-verMas");
                 btnVerMas.addEventListener('click', agregarInfo)
 
 function agregarInfo (){
     let infoCompleta = document.createElement("p");
-    infoCompleta.innerHTML =`<p> Esta es toda la informacion completa que tenemos por el momento</p>
+    infoCompleta.innerHTML =`<p id="oa" > Esta es toda la informacion completa que tenemos por el momento</p>
                             <hr>`;
     document.querySelector("#masInfo").appendChild(infoCompleta);
     btnVerMas.removeEventListener('click', agregarInfo, false)
 }
 
-
+                    // SEGUNDO BOTON DE +DETALLES
 
 let btnVerMas1 = document.querySelector("#btn-verMas1");
                 btnVerMas1.addEventListener('click', verMasInfo)
 
 function verMasInfo (){
     let informacion = document.createElement("p");
-    informacion.innerHTML =`<p> La orientación de la habitación es dirección al oeste, mirando a los distintos cerros</p>
+    informacion.innerHTML =`<p> La orientación del hotel es en dirección norte con una vista panorámica al Lago Nahuel</p>
                             <hr>`;
     document.querySelector("#infoHabitacion").appendChild(informacion);
     btnVerMas1.removeEventListener('click', verMasInfo, false)
@@ -71,11 +64,19 @@ const arrayHabitacion = [ {nombre: "SIMPLE", capacidad: 1, disponible: "Hay disp
 
                     //AGREGA DIV CON LAS HABITACIONES DISPONIBLES
 
-                    for (const room of arrayHabitacion){
+
+let verDetalles = document.querySelector("#btn-verDetalles")
+                  verDetalles.addEventListener('click', opa);
+
+
+function opa () {
+        for (const room of arrayHabitacion){
                         
-                        let contenedor = document.createElement("div");
-                        
-                        contenedor.innerHTML = `<p> Tipos de habitaciones: ${room.nombre} </p>
-                        <p> Disponibilidad: ${room.disponible} </p>
-                        <br>`;
-                        document.querySelector('span').appendChild(contenedor);                    }
+            let contenedor = document.createElement("div");
+                
+            contenedor.innerHTML = `<p> Tipos de habitaciones: ${room.nombre} </p>
+            <p> Disponibilidad: ${room.disponible} </p>
+            <hr>`;
+            document.querySelector('#rooms').appendChild(contenedor)};
+            verDetalles.removeEventListener('click', opa, false)
+}        

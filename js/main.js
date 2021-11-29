@@ -1,40 +1,11 @@
-                          // SELECT CON PRECIO DEL PASAJE
-
-const selectElement = document.querySelector('#select');
-
-selectElement.addEventListener('change', (event) => {
-    const result = document.querySelector('#resultado');
-    result.textContent = `Su viaje cuesta ARS$ ${event.target.value}`;});
-
-                //CREACION DE UN PARRAFFO CON LA COTIZACIÓN DEL VIAJE
-
-/* let personas = parseInt(prompt("Cuantas personas van a ser?"))
-let dias = parseInt(prompt("Cuantos días piensa alojarse?"))
-let habitacion = parseInt(prompt("Cuantas habitaciones necesitas?"))
-
-function Disponibilidad (d, p, h) {
-    this.dias = d;
-    this.personas = p;
-    this.habitacion = h;
-    this.reserva = function (){
-        if (this.personas <= 5 && this.dias <= 6 && this.habitacion <= 3) {
-            document.write("Hay disponibilidad para esos días.")
-        } else { document.write("No hay disponibilidad.")  }
-    }
-}
-
-const hotel = new Disponibilidad (dias, personas, habitacion);
-
-hotel.reserva(); */
-
                     //BOTON DE +INFO
-
+/*
 let btnVerMas = document.querySelector("#btn-verMas");
                 btnVerMas.addEventListener('click', agregarInfo)
 
-function agregarInfo (){
+ function agregarInfo (){
     let infoCompleta = document.createElement("p");
-    infoCompleta.innerHTML =`<p id="oa" > Esta es toda la informacion completa que tenemos por el momento</p>
+    infoCompleta.innerHTML =`<p" > Esta es toda la informacion completa que tenemos por el momento</p>
                             <hr>`;
     document.querySelector("#masInfo").appendChild(infoCompleta);
     btnVerMas.removeEventListener('click', agregarInfo, false)
@@ -42,8 +13,8 @@ function agregarInfo (){
 
                     // SEGUNDO BOTON DE +DETALLES
 
-let btnVerMas1 = document.querySelector("#btn-verMas1");
-                btnVerMas1.addEventListener('click', verMasInfo)
+let btnVerMas1 = document.querySelector("#btn-verMas1")
+                btnVerMas1.addEventListener('click', verMasInfo);
 
 function verMasInfo (){
     let informacion = document.createElement("p");
@@ -51,32 +22,94 @@ function verMasInfo (){
                             <hr>`;
     document.querySelector("#infoHabitacion").appendChild(informacion);
     btnVerMas1.removeEventListener('click', verMasInfo, false)
-}
+} */
 
                     // ARRAY DE OBJETOS CON LAS HABITACIONES
 
-const arrayHabitacion = [ {nombre: "SIMPLE", capacidad: 1, disponible: "Hay disponilidad"},
-                    {nombre: "DOBLE", capacidad: 2, disponible: "No hay disponilidad"},
-                    {nombre: "TRIPLE", capacidad: 3, disponible: "No hay disponilidad"},
-                    {nombre: "CUADRUPLE", capacidad: 4, disponible: "Hay disponilidad"},
-                    {nombre: "SUITE", capacidad: 2, disponible: "Hay disponilidad"},
-                    {nombre: "DUPLEX", capacidad: 4, disponible: "Hay disponilidad"}];
+const arrayHabitacion = [ {nombre: "SIMPLE", capacidad: 1, disponible: true, precio: 1000},
+                    {nombre: "DOBLE", capacidad: 2, disponible: false, precio: 1300},
+                    {nombre: "TRIPLE", capacidad: 3, disponible: false, precio: 1600},
+                    {nombre: "CUADRUPLE", capacidad: 4, disponible: false, precio: 2000},
+                    {nombre: "SUITE", capacidad: 2, disponible: true, precio: 2500},
+                    {nombre: "DUPLEX", capacidad: 4, disponible: true, precio: 3100}];
 
-                    //AGREGA DIV CON LAS HABITACIONES DISPONIBLES
+                    
+                            // CALENDARIO
 
+//Check-in
 
-let verDetalles = document.querySelector("#btn-verDetalles")
-                  verDetalles.addEventListener('click', opa);
+let inputCalendario = document.querySelector("#check-in")
 
+    inputCalendario.addEventListener('change', (evt) => {
+        let ingreso = `${evt.target.value}`;
+        localStorage.setItem('fechaIngreso', ingreso)
 
-function opa () {
-        for (const room of arrayHabitacion){
-                        
-            let contenedor = document.createElement("div");
-                
-            contenedor.innerHTML = `<p> Tipos de habitaciones: ${room.nombre} </p>
-            <p> Disponibilidad: ${room.disponible} </p>
-            <hr>`;
-            document.querySelector('#rooms').appendChild(contenedor)};
-            verDetalles.removeEventListener('click', opa, false)
-}        
+        let infoIngreso = document.querySelector("#miFechaI");
+        infoIngreso.innerHTML = `- Fecha de entrada: ${ingreso}`
+});
+
+//Check-out
+
+let inputCalendario1 = document.querySelector("#check-out")
+
+    inputCalendario1.addEventListener('change', (evt) => {
+        let salida = `${evt.target.value}`;
+        localStorage.setItem('fechaSalida', salida)
+
+       let infoSalida = document.querySelector("#miFechaS");
+       infoSalida.innerHTML = `- Fecha de salida: ${salida}`
+});
+
+//Selcet de "personas"
+
+let selectPersonas = document.querySelector("#personas");
+            
+ selectPersonas.addEventListener('change', (evt)=> {
+    let buscar = `${evt.target.value}`;
+    localStorage.setItem('personas', buscar)
+
+    let infobuscar = document.querySelector("#miPersonas");
+       infobuscar.innerHTML = `- Para ${buscar} persona(s)`
+});
+
+//Input "noches"
+
+inputNoches = document.querySelector("#noches")
+
+inputNoches.addEventListener('change', (evt)=>{
+
+    let noches = `${evt.target.value}`;
+    localStorage.setItem('noches', noches)
+
+    let infoNoches = document.querySelector("#miNoches");
+    infoNoches.innerHTML = `- ${noches} noche(s)`;
+})
+
+//Boton "ver completo" del calendario
+
+let btnVerCompleto = document.querySelector("#btn-verCompleto");
+
+btnVerCompleto.addEventListener('click', () => {
+    let infoReserva = document.querySelector("#verCompleto");
+        infoReserva.innerHTML ="Su consulta es por lo siguiente: ";
+    
+})
+
+//Boton "cargar" del calendario
+
+let btnCargar = document.querySelector("#btn-cargar");
+
+btnCargar.addEventListener('click', () => {
+
+    if (localStorage.length != 0){
+    let miFechaIngreso = localStorage.getItem('fechaIngreso')
+    let miFechaSalida = localStorage.getItem('fechaIngreso')
+    let miPersonas = localStorage.getItem('personas')
+    let miNoches = localStorage.getItem('noches')
+    let infoReserva = document.querySelector("#verMiReserva");
+    infoReserva.innerHTML =`Su consulta es por ${miPersonas} personas, entre las fechas ${miFechaIngreso} y ${miFechaSalida}, un total de: (${miNoches} noches)`;
+    }else{
+        let infoNull = document.querySelector("#verMiReserva");
+        infoNull.innerHTML = "No hay consultas en el historial";
+    }
+})

@@ -40,3 +40,7 @@ background-color: rgba(95, 51, 0, 0.479);}
         text-align: center;
         padding: 5em;
         margin: auto;}
+
+#btn-cargar{border: none;
+        background:none;
+color: green;}

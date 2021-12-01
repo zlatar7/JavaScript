@@ -43,4 +43,13 @@ background-color: rgba(95, 51, 0, 0.479);}
 
 #btn-cargar{border: none;
         background:none;
-color: green;}
+        color: green;}
+
+#btn-verActividades{border: none;
+        background:none;
+        font-weight: bolder;
+        color: green;}
+
+#divLimpiar{display: flex;
+justify-content: center;
+padding: 1em;}

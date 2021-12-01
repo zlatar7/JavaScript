@@ -42,22 +42,21 @@
           <h1>BIENVENIDOS AL HOTEL ARRAYANES</h1>
             <div class="row row-cols-2">
               <div class="col">
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores voluptatibus labore cupiditate quae ab quis beatae! Necessitatibus, doloribus. Mollitia eius beatae hic atque! Vel ex exercitationem unde, magnam molestias modi.</p>
+                  <p>Somos un complejo de hospedajes ubicado en las afueras de la ciudad de Bariloche, a los pies de los cerro Otto y en las orillas del maravilloso lago Nahuel Huapi. Contamos con fácil acceso a la ciudad, a solo 5 km del centro. Tal es así que el famoso recorrido "Circuito Chico" pasa por nuestras puertas.</p>
               </div>
-              <div class="col">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam optio sit exercitationem doloribus obcaecati illo odio, vel quisquam, eum distinctio nobis laboriosam hic at eos dolores? Id dolor maxime esse!</p>
+              <div id="divParrafo" class="col">
+                <p>Desde nuestro complejo salen numerosas excursiones y actividades recreativas. Visitar los sitios turísticos resulta ser mas que fácil y accesible, ideal para aquellos que les guste la aventura, recorrer y sumar nuevas experiencias.</p>
+                <button id="btn-verActividades">ver actividades</button>
             </div>
               <div class="col">
-                  <p id="tercerParrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, obcaecati officiis perferendis similique eligendi libero quam, tempore ipsum corporis pariatur dolorem magnam debitis eos voluptatem facere. Excepturi voluptatum necessitatibus perferendis!</p>
-              </div>
+                  <p>Ofrecemos una comodidad reconocida por todos nuestros clientes y unas vistas espléndidas desde nuestras habitaciones. La panorámica sobre los lagos Moreno y Nahuel Huapi son un gran atractivo de nuestra localización, también la noche brinda un paisaje distinto siendo otra gran seducción para los turistas que nos visitan.</p>
+            </div>
               <div class="col">
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, corrupti provident optio maiores expedita inventore quam natus cupiditate perferendis ducimus similique tempora quas quis veritatis. Veniam qui ratione in eaque.</p>
               </div>
               <div class="col" id="masInfo">
               </div>
             </div>
-            <!-- <button class="accordion" id="btn-verMas">+ info</button> -->
-            
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
@@ -76,7 +75,7 @@
                                       <!---CALENDARIO---->
 
      <section class=" container-fluid " id="calendar">
-      <div class="container bg-warning col-xl-6 col-sm-6"> 
+      <div class="container bg-warning bg-opacity-75 col-xl-6 col-sm-6"> 
           <form class="row d-flex justify-content-center align-content-center">         
               <div class=" col-xl-6 col-sm-6">                                
                   <label for="check-in" class="form-label">Check-in</label>
@@ -114,10 +113,10 @@
   <hr>
                                         <!-- MI RESERVA -->
 
-<section>
-  <div>
-    <h2>MI RESERVA</h2>
-    <div id="verMiReserva" class=" col-xl-10 col-sm-6 alert alert-light" role="alert">
+<section class="bg-warning bg-opacity-75">
+  <div class="container">
+    <h2 class="text-center">MI RESERVA</h2>
+    <div id="verMiReserva" class="container col-xl-10 col-sm-6 alert alert-light" role="alert">
       <p id="verCompleto"></p>
       <p id="miFechaI"></p>
       <p id="miFechaS"></p>
@@ -125,42 +124,45 @@
       <p id="miPersonas"></p>
     </div>
   </div>
+  <div id="divLimpiar">
+    <button id="btn-limpiar" class="btn-sm btn-success border-0">Limpiar historial</button>
+    <!-- <button id="btn-cotizacion">VER PRECIO</button> -->
+  </div>
 </section>
-<div id ="btn-limpiar"></div>
 <hr>
 
                           <!--- IMAGENES DE LAS HABITACIONES Y DESCRIPCIÓN --->
 
      <div class="card-group">
-            <div class="card">
+            <div class="card foto">
               <img src="archivos multimedia/hotel.jpg" class="card-img-top" alt="hotel">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title a">Card title</h5>
+                <p class="card-text a">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               </div>
 
             </div>
-            <div class="card">
+            <div class="card foto1">
               <img src="archivos multimedia/hall.jpg" class="card-img-top" alt="hall">
-              <div class="card-body">
+              <div class="card-body b">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text b">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. all right now</p>
               </div>
-
             </div>
-            <div class="card">
+
+            <div class="card foto2">
               <img src="archivos multimedia/habitacion1.jpg" class="card-img-top" alt="habitacion1">
-              <div class="card-body">
+              <div class="card-body  c">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text c">This card has supporting text below as a natural lead-in to additional content.</p>
               </div>
 
             </div>
-            <div class="card">
+            <div class="card foto3">
               <img src="archivos multimedia/hotel2.jpg" class="card-img-top" alt="hotel2">
-              <div class="card-body">
+              <div class="card-body d">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text d">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
               </div>
 
             </div>
@@ -170,12 +172,12 @@
                             <!--- DESCRIPCIÓN ADICIONAL--->
 
      <div class="container">
-        <div class="card rounded-3">
-         <img src="./archivos multimedia/hotel3.jpg" alt="hotel afuera">
+        <div class="card rounded-3 foto1">
+         <img src="./archivos multimedia/hotel3.jpg" alt="hotel afuera" class="a">
          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, labore cumque. Cumque hic mollitia dolore soluta nisi eaque repudiandae ex, sequi quod dolores officiis possimus nesciunt quisquam! Quis, nemo consectetur.</p>
         </div>
-        <div class="card">
-         <img src="./archivos multimedia/lago.jpg" alt="hotel balcon">
+        <div class="card foto2">
+         <img src="./archivos multimedia/lago.jpg" alt="hotel balcon" class="b">
          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex eaque qui natus nesciunt placeat magni eos voluptate, dignissimos tempore libero reiciendis sint amet blanditiis expedita cupiditate, maxime distinctio ipsa incidunt?</p>
         </div>
         <div id="infoHabitacion">
@@ -256,18 +258,43 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
+      //BOTON "VER COMPLETO" DEL CALENDARIO
+      $("#btn-verCompleto").click(() => {
+        $("#verMiReserva").fadeOut("fast");
+        $("#verMiReserva").fadeIn(1500);
+      })
 
-      $("#btn-limpiar").append(`<button id="limpiar">Limpiar historial</button>`);
+      //BOTON "VER ACTIVIDADES" DE LA DESCRIPCION PRINCIPAL
+      $("#btn-verActividades").mouseover(()=>{
+        $("#btn-verActividades").fadeOut(200)
+      $("#btn-verActividades").fadeIn(1000)
+      })
 
-      $("#limpiar").on('click', limpiarStorage);
-
-      function limpiarStorage (){
-       localStorage.clear();
-       location.reload();
-      }
+      //PUNTERO SOBRE LAS IMAGENES DE LAS HABITACIONES (estilo hover)
+      $(".foto").mouseenter(()=>{
+        $(".a").css({ "color": "green"})
+      })
+      $(".foto").mouseleave(()=>{
+        $(".a").css({ "color": "black" })
+      })
+      $(".foto1").mouseenter(()=>{
+        $(".b").css({ "color": "green"})
+      })
+      $(".foto1").mouseleave(()=>{
+        $(".b").css({ "color": "black" })
+      })
+      $(".foto2").mouseenter(()=>{
+        $(".c").css({ "color": "green"})
+      })
+      $(".foto2").mouseleave(()=>{
+        $(".c").css({ "color": "black" })
+      })
+      $(".foto3").mouseenter(()=>{
+        $(".d").css({ "color": "green"})
+      })
+      $(".foto3").mouseleave(()=>{
+        $(".d").css({ "color": "black" })
+      })
     </script>
-
-    
-    
 </body>
 </html>

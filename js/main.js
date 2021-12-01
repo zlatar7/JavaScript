@@ -1,29 +1,3 @@
-                    //BOTON DE +INFO
-/*
-let btnVerMas = document.querySelector("#btn-verMas");
-                btnVerMas.addEventListener('click', agregarInfo)
-
- function agregarInfo (){
-    let infoCompleta = document.createElement("p");
-    infoCompleta.innerHTML =`<p" > Esta es toda la informacion completa que tenemos por el momento</p>
-                            <hr>`;
-    document.querySelector("#masInfo").appendChild(infoCompleta);
-    btnVerMas.removeEventListener('click', agregarInfo, false)
-}
-
-                    // SEGUNDO BOTON DE +DETALLES
-
-let btnVerMas1 = document.querySelector("#btn-verMas1")
-                btnVerMas1.addEventListener('click', verMasInfo);
-
-function verMasInfo (){
-    let informacion = document.createElement("p");
-    informacion.innerHTML =`<p> La orientación del hotel es en dirección norte con una vista panorámica al Lago Nahuel</p>
-                            <hr>`;
-    document.querySelector("#infoHabitacion").appendChild(informacion);
-    btnVerMas1.removeEventListener('click', verMasInfo, false)
-} */
-
                     // ARRAY DE OBJETOS CON LAS HABITACIONES
 
 const arrayHabitacion = [ {nombre: "SIMPLE", capacidad: 1, disponible: true, precio: 1000},
@@ -74,7 +48,7 @@ let selectPersonas = document.querySelector("#personas");
 
 //Input "noches"
 
-inputNoches = document.querySelector("#noches")
+inputNoches = document.querySelector("#noches");
 
 inputNoches.addEventListener('change', (evt)=>{
 
@@ -90,9 +64,8 @@ inputNoches.addEventListener('change', (evt)=>{
 let btnVerCompleto = document.querySelector("#btn-verCompleto");
 
 btnVerCompleto.addEventListener('click', () => {
-    let infoReserva = document.querySelector("#verCompleto");
-        infoReserva.innerHTML ="Su consulta es por lo siguiente: ";
-    
+        let infoReserva1 = document.querySelector("#verCompleto")
+        infoReserva1.innerHTML ="Su consulta es por lo siguiente: ";
 })
 
 //Boton "cargar" del calendario
@@ -113,3 +86,49 @@ btnCargar.addEventListener('click', () => {
         infoNull.innerHTML = "No hay consultas en el historial";
     }
 })
+
+//Boton "limpiar" del calendario
+
+let btnLimpiar = document.querySelector("#btn-limpiar");
+
+btnLimpiar.addEventListener('click', limpiarStorage)
+
+function limpiarStorage () {
+localStorage.clear();
+location.reload();
+}
+
+                        //FUNCIONES COTIZAR ESTADIA
+/* 
+const preciosHab = arrayHabitacion.map(a => a.precio);
+
+let hSimple = preciosHab.slice(0,1);
+let hDoble = preciosHab.slice(1,2);
+let hTriple = preciosHab.slice(2,3);
+let hCuadruple = preciosHab.slice(3,4);
+let hSuite = preciosHab.slice(4,5);
+let hDuplex = preciosHab.slice(5,6);
+
+let noches = localStorage.getItem('noches')
+
+switch(noches){
+    case 1:cotizar(noches, hSimple)
+    break;
+    case 2:cotizar(noches, hDoble)
+    break;
+    case 3:cotizar(noches, hTriple)
+    break;
+    case 4:cotizar(noches, hCuadruple)
+    break;
+    case 5:cotizar(noches, hSuite)
+    break;
+    case 6:cotizar(noches, hDuplex)
+    break;
+}
+let reservaCompleta = document.querySelector("#btn-cotizacion");
+
+reservaCompleta.addEventListener('click', (evt)=>{
+    console.log(mulitplicacion());
+})
+
+const cotizar = (noches, precio) => {noches * precio}; */

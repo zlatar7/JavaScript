@@ -15,10 +15,10 @@
               <a class="nav-link active text-white" aria-current="page" href="#">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="pages/reserva.html">MI RESERVA</a>
+              <a class="nav-link text-white" href="#calendar">MI RESERVA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="">CONTACTO</a>
+              <a class="nav-link text-white" href="#divRedes">CONTACTO</a>
             </li>
           </ul>
     </header>
@@ -46,13 +46,13 @@
               </div>
               <div id="divParrafo" class="col">
                 <p>Desde nuestro complejo salen numerosas excursiones y actividades recreativas. Visitar los sitios turísticos resulta ser mas que fácil y accesible, ideal para aquellos que les guste la aventura, recorrer y sumar nuevas experiencias.</p>
-                <button id="btn-verActividades">ver actividades</button>
+                <a href="#carouselExampleFade"><button id="btn-verActividades">ver actividades</button></a>
             </div>
               <div class="col">
                   <p>Ofrecemos una comodidad reconocida por todos nuestros clientes y unas vistas espléndidas desde nuestras habitaciones. La panorámica sobre los lagos Moreno y Nahuel Huapi son un gran atractivo de nuestra localización, también la noche brinda un paisaje distinto siendo otra gran seducción para los turistas que nos visitan.</p>
             </div>
               <div class="col">
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, corrupti provident optio maiores expedita inventore quam natus cupiditate perferendis ducimus similique tempora quas quis veritatis. Veniam qui ratione in eaque.</p>
+                  <p>Lo mas destacado del lugar son los centros de esquí, visitados por turistas extranjeros y de todo el país. Contamos con transporte hacia los cerros, siendo solamente unos minutos de viajes a las mencionadas pistas.</p>
               </div>
               <div class="col" id="masInfo">
               </div>
@@ -75,33 +75,29 @@
                                       <!---CALENDARIO---->
 
      <section class=" container-fluid " id="calendar">
-      <div class="container bg-warning bg-opacity-75 col-xl-6 col-sm-6"> 
+      <div class="container bg-warning bg-opacity-75 col-xl-6 col-12 col-sm-6"> 
           <form class="row d-flex justify-content-center align-content-center">         
-              <div class=" col-xl-6 col-sm-6">                                
+              <div class=" col-xl-6 col-6 col-sm-12">                                
                   <label for="check-in" class="form-label">Check-in</label>
                   <input class="form-control form-control-sm" type="date" name="check-in" id="check-in">   
               </div>                        
-              <div class=" col-xl-6 col-sm-6">                                
-                  <label for="check-out">Check-out</label>
-                  <input class="form-control form-control-sm" type="date" name="check-out" id="check-out"> 
-              </div>
-               <div class="form-row form-group flex-column align-items-center align-self-center col-xl-4 col-sm-6">                                
-                  <label for="guests">Cantidad de personas:</label>
-                  <select id="personas" class="form-control-sm">
+              <div class=" form-row form-group flex-column align-items-center align-self-center col-xl-6 col-12 col-sm-6">                                
+                  <label for="guests">Habitación:</label>
+                  <select id="hospedaje" class="form-control-sm col-sm-12 col-12">
                     <option></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
+                    <option>Habitación Simple</option>
+                    <option>Habitación Doble</option>
+                    <option>Habitación Triple</option>
+                    <option>Habitación Cuadruple</option>
+                    <option>Suite</option>
+                    <option>Duplex</option>
                   </select>
               </div>
-              <div class=" col-xl-8 col-sm-6">
+              <div class="col-xl-6 col-6 col-sm-12">
                 <label for="number">Cantidad de noches:</label>
-                <input class="form-control" type="number" id="noches" style="width: 20%; height: 50%"> 
+                <input class="form-control" type="number" id="noches" style="width: 20%"> 
             </div>
-              <div class="align-self-center col-xl-12 col-sm-6">
+              <div class="align-self-center col-xl-6 col-6 col-sm-12 m-2">
                  <a href="#verMiReserva"><button id="btn-verCompleto" type="button" class="btn btn-success btn-sm">VER COMPLETO</button></a>
                  <div>
                   ¿Desea cargar la ultima consulta?
@@ -121,48 +117,54 @@
       <p id="miFechaI"></p>
       <p id="miFechaS"></p>
       <p id="miNoches"></p>
-      <p id="miPersonas"></p>
+      <p id="miHabitacion"></p>
     </div>
   </div>
   <div id="divLimpiar">
     <button id="btn-limpiar" class="btn-sm btn-success border-0">Limpiar historial</button>
-    <!-- <button id="btn-cotizacion">VER PRECIO</button> -->
   </div>
+  <div class="container fluid bg-danger bg-opacity-25 col-xl-8">
+    <button id="btn-cotizacion" class="btn-sm btn-success border-0 m-2">VER PRECIO</button>
+    <div id="verPrecio"></div>
+    <button id="btn-refrescar" class="btn-sm btn-success border-0 m-2">BORRAR COTIZACION</button>
+
+  </div>
+
 </section>
 <hr>
 
                           <!--- IMAGENES DE LAS HABITACIONES Y DESCRIPCIÓN --->
 
      <div class="card-group">
-            <div class="card foto">
+            <div class="card foto m-3">
               <img src="archivos multimedia/hotel.jpg" class="card-img-top" alt="hotel">
               <div class="card-body">
-                <h5 class="card-title a">Card title</h5>
-                <p class="card-text a">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title a">HOTEL ARRAYANES</h5>
+                <p class="card-text a">La localización y arribo al complejo es muy rápido y fácil. Del lado de la Avenida (a orillas del Lago Nahuel Huapi) está el frente, todo hecho con madera de Arrayanes manteniendo un estilo clásico de arquitectura en la Patagonia que se combina con lo nuevo y vanguardista del siglo XXI</p>
               </div>
 
             </div>
-            <div class="card foto1">
+            <div class="card foto1 m-3">
               <img src="archivos multimedia/hall.jpg" class="card-img-top" alt="hall">
               <div class="card-body b">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text b">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. all right now</p>
+                <h5 class="card-title">INTERIORES</h5>
+                <p class="card-text b">Los visitantes pueden gozar de las instalaciones del complejo, las cuales contemplan las siguientes instalaciones y servicios: buffet, bar, sala de estar, Wi-Fi en todas las habitaciones, lavandería, patio, parrilla, habitaciones espaciosas, sommiers, entre tantas otras.</p>
               </div>
             </div>
 
-            <div class="card foto2">
+            <div class="card foto2 m-3">
               <img src="archivos multimedia/habitacion1.jpg" class="card-img-top" alt="habitacion1">
               <div class="card-body  c">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text c">This card has supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">VISTA A LOS LAGOS</h5>
+                <p class="card-text c">Las habitaciones son testigos de los deslumbrantes lagos patagónicos. Además de poseer amplio espacio y luminosidad abundante.</p>
               </div>
 
             </div>
-            <div class="card foto3">
+            <div class="card foto3 m-3">
               <img src="archivos multimedia/hotel2.jpg" class="card-img-top" alt="hotel2">
               <div class="card-body d">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text d">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <h5 class="card-title">VISTA A LOS CERROS</h5>
+                <p class="card-text d">En la base del cerro Otto se puede apreciar la temporada alta, no solo la inmensidad del lugar sino realizando deportes de invierno como el esquí, snowboard y muchos otros.</p>
               </div>
 
             </div>
@@ -172,25 +174,36 @@
                             <!--- DESCRIPCIÓN ADICIONAL--->
 
      <div class="container">
-        <div class="card rounded-3 foto1">
+        <div class="card rounded-3 foto1 m-4">
          <img src="./archivos multimedia/hotel3.jpg" alt="hotel afuera" class="a">
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, labore cumque. Cumque hic mollitia dolore soluta nisi eaque repudiandae ex, sequi quod dolores officiis possimus nesciunt quisquam! Quis, nemo consectetur.</p>
+         <p>Nuestro complejo ubicado estratégicamente en la salida de la ciudad hacia los cerros (ver foto), posibilita muchas ventajas ya sea en cuanto a movilidad como la escapada de la
+           contaminación lumínica, lo cual permite tener las mejores vistas de los cerros, bosques, lagos, y los cielos nocturnos. Contamos con amplia capacidad de hospedaje, y además
+           el confort necesario para descansar y luego seguir en busca de aventura.
+         </p>
         </div>
-        <div class="card foto2">
+        <div class="card foto2 m-4">
          <img src="./archivos multimedia/lago.jpg" alt="hotel balcon" class="b">
-         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex eaque qui natus nesciunt placeat magni eos voluptate, dignissimos tempore libero reiciendis sint amet blanditiis expedita cupiditate, maxime distinctio ipsa incidunt?</p>
+         <p>El parque nacional Nahuel Huapi (Isla del Jaguar) es una extensa área natural protegida.
+          Es el más antiguo de los parques nacionales argentinos, ya que fue creado el 8 de abril de 1934,
+          es internacionalmente conocido por su atractiva geografía en la que se destacan el lago Nahuel Huapi, y el cerro Tronador que son complementados
+          por un variado conjunto de montañas, valles, más de 60 lagos y lagunas, y un sinnúmero de arroyos. Se destaca por sus ecosistemas representativos de los Andes patagónicos, habitando en él más de un millar de especies botánicas superiores,
+          y unas 300 especies de animales.
+          Es uno de los parques nacionales más extensos y parece tenerlo todo: montañas, lagos, ríos, bosques, estepa y hasta una gran ciudad, Bariloche. En este lugar de la Patagonia, comenzó la historia de los parques nacionales argentinos, que hoy se distribuyen por todo el territorio nacional.
+          Se han contabilizado un gran número de especies de mamíferos, aves, peces y reptiles, incluyendo varias que se encuentran amenazadas o en peligro de extinción. Los amplios bosques y ambientes naturales incluyen una rica variedad de plantas, con profusión de coihues, cipreses y alerces.
+          Entre su fauna característica se destacan los cóndores, ciervos, jabalíes, pumas y guanacos.</p>
         </div>
         <div id="infoHabitacion">
-        <!--  <button id="btn-verMas1">+ DETALLES</button> -->
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                VER MAS DETALLES
+                Ver mas Información
               </button>
             </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">La orientación del hotel es en dirección norte con una vista panorámica al Lago Nahuel Huapi</div>
+            <div id="flush-collapseOne" class="accordion-collapse collapse m-4" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">La orientación del hotel es en dirección norte con una vista panorámica al Lago Nahuel Huapi. Donde se puede apreciar el famoso hotel de lujo Llao Llao (foto), que ademas fué y es sede de visitas presidenciales, se le suman los campos de golf.
+                Las opciones recreativas que presentan los diversos lagos son excelentes, desde excuriones en catamaran hasta kayak o rafting.
+              </div>
             </div>
           </div>
           </div>
@@ -243,13 +256,27 @@
     </div>
     </section>
 
+                                     <!-- CLIMA (ajax con jquery) -->
+                                    
+  <div id="resultadoClima">PRONÓSTICO EXTENDIDO PARA LOS PRÓXIMOS 5 DÍAS
+  <button id="btn-clima">VER PRONÓSTICO</button>
+  </div>
+
   </main>
 
     <footer>
         <div id="divRedes">
-          <ion-icon name="logo-facebook" class="divRedes"></ion-icon>
-          <ion-icon name="logo-instagram" class="divRedes"></ion-icon>
-          <ion-icon name="logo-whatsapp" class="divRedes"></ion-icon>
+          <div>
+            <ion-icon name="logo-instagram" class="divRedes"></ion-icon>
+            <p>@ArrayanesBrc</p>
+          </div>
+          <div> <ion-icon name="logo-facebook" class="divRedes"></ion-icon>
+            <p>Arrayanes_bariloche</p>
+          </div>
+         <div>
+           <ion-icon name="logo-whatsapp" class="divRedes"></ion-icon>
+          <p>011-157856921</p>
+        </div>         
         </div>
         
     </footer>
@@ -295,6 +322,78 @@
       $(".foto3").mouseleave(()=>{
         $(".d").css({ "color": "black" })
       })
+
+      //API DE ACCUWEATHER AJAX CON JQUERY 
+
+    const result = $("#resultadoClima");
+    const apiKey = 'VjTLvbdq7O59OLPPoM3LISt6fjBovVAm';
+    const brcKey = '1-5857_1_AL'
+    const url = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/1-5857_1_AL?apikey=VjTLvbdq7O59OLPPoM3LISt6fjBovVAm&details=true"    
+   
+    //funcion obtener clima de la API
+
+     function getWeather (){
+        
+      $.ajax({
+        url: "http://dataservice.accuweather.com/forecasts/v1/daily/5day/1-5857_1_AL?apikey=VjTLvbdq7O59OLPPoM3LISt6fjBovVAm&details=true",
+        type: 'GET',
+        dataType: 'json',
+        success: function (respuesta) {
+         let obj = JSON.stringify(respuesta);
+        let obje = Object.values(respuesta)
+          console.log(obje)
+}})}
+
+       //funcion JQueryData (obtiene valores del archivo JSON)
+    
+const jQueryData = () => {
+      $.getJSON(url, (respuesta, estado)=>{
+        if(estado ==="success"){
+         let resultado = Object.values(respuesta);
+         let resultado1 = Object.values(resultado[1]);
+
+          let resultado2 = Object.values(resultado1)
+          let d =  JSON.stringify(resultado2);
+
+          displayList(resultado1,resultado2);
+  }
+  }
+)};
+
+      //Funcion displaList para imprimir valores en pantalla
+
+const displayList = (jsonObject1) =>{  
+
+      jsonObject1.forEach(item => {
+      const{Temperature, Date, Icon, Day, Sun} = item
+
+          let a = (JSON.stringify(Temperature.Maximum.Value))
+          let b = (JSON.stringify(Temperature.Minimum.Value))
+
+            $("#resultadoClima").append(`<div class="temp">
+              DÍA: ${Date.slice(0,10)}:
+              maxima de: ${convertirCelsius(a)} C° 
+              y minima de: ${convertirCelsius(b)} C°. 
+              Salida del Sol: ${Sun.Rise.slice(11,19)}
+              </div>
+              <br>`)      
+            
+      });
+}
+
+// funcion para convertir a grados Celsius (C°)
+
+function convertirCelsius (e) {
+  let F = e;
+  let C = (e-32)*(5/9);
+  let grados = C.toFixed(1);
+  return grados;
+}
+
+// Boton para ver el clima
+
+$("#btn-clima").one('click', jQueryData);
+
     </script>
 </body>
 </html>

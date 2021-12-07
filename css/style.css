@@ -20,6 +20,12 @@ ion-icon{ height: 1.5em;
 section{margin-right: 3em;
         margin-left: 3em;}
 
+.temp{color: green;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+text-align: center;
+margin-right:40px ;
+margin-left:40px ;}
+
 #menuCotizacion{background-color: rgb(255, 198, 93);}
 
 #imagen{position:relative ;
@@ -41,6 +47,15 @@ background-color: rgba(95, 51, 0, 0.479);}
         padding: 5em;
         margin: auto;}
 
+#resultadoClima{background-color: rgba(190, 255, 160, 0.356);
+text-align: center;
+color: rgb(255, 94, 0);
+font-weight: bolder;}
+
+#btn-clima{margin-left:10px;
+        background: green;
+        color: white;}
+
 #btn-cargar{border: none;
         background:none;
         color: green;}
@@ -53,3 +68,7 @@ background-color: rgba(95, 51, 0, 0.479);}
 #divLimpiar{display: flex;
 justify-content: center;
 padding: 1em;}
+
+#verPrecio{ height: 2em;
+        background: white;
+}

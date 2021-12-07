@@ -22,28 +22,16 @@ let inputCalendario = document.querySelector("#check-in")
         infoIngreso.innerHTML = `- Fecha de entrada: ${ingreso}`
 });
 
-//Check-out
+//Select de "hospedaje"
 
-let inputCalendario1 = document.querySelector("#check-out")
-
-    inputCalendario1.addEventListener('change', (evt) => {
-        let salida = `${evt.target.value}`;
-        localStorage.setItem('fechaSalida', salida)
-
-       let infoSalida = document.querySelector("#miFechaS");
-       infoSalida.innerHTML = `- Fecha de salida: ${salida}`
-});
-
-//Selcet de "personas"
-
-let selectPersonas = document.querySelector("#personas");
+let selectHospedaje= document.querySelector("#hospedaje");
             
- selectPersonas.addEventListener('change', (evt)=> {
-    let buscar = `${evt.target.value}`;
-    localStorage.setItem('personas', buscar)
+ selectHospedaje.addEventListener('change', (evt)=> {
+    let habitacion = `${evt.target.value}`;
+    localStorage.setItem('habitacion', habitacion)
 
-    let infobuscar = document.querySelector("#miPersonas");
-       infobuscar.innerHTML = `- Para ${buscar} persona(s)`
+    let infobuscar = document.querySelector("#miHabitacion");
+       infobuscar.innerHTML = `- ${habitacion}`
 });
 
 //Input "noches"
@@ -76,18 +64,17 @@ btnCargar.addEventListener('click', () => {
 
     if (localStorage.length != 0){
     let miFechaIngreso = localStorage.getItem('fechaIngreso')
-    let miFechaSalida = localStorage.getItem('fechaIngreso')
-    let miPersonas = localStorage.getItem('personas')
+    let mihabitacion = localStorage.getItem('habitacion')
     let miNoches = localStorage.getItem('noches')
     let infoReserva = document.querySelector("#verMiReserva");
-    infoReserva.innerHTML =`Su consulta es por ${miPersonas} personas, entre las fechas ${miFechaIngreso} y ${miFechaSalida}, un total de: (${miNoches} noches)`;
+    infoReserva.innerHTML =`Su consulta es por ${mihabitacion}, a partir de la fecha ${miFechaIngreso}, por un total de: ${miNoches} noche(s)`;
     }else{
         let infoNull = document.querySelector("#verMiReserva");
         infoNull.innerHTML = "No hay consultas en el historial";
     }
 })
 
-//Boton "limpiar" del calendario
+//Boton "limpiar" del calendario (limpia el storage)
 
 let btnLimpiar = document.querySelector("#btn-limpiar");
 
@@ -99,36 +86,56 @@ location.reload();
 }
 
                         //FUNCIONES COTIZAR ESTADIA
-/* 
+
+// Precios de las habitaciones
 const preciosHab = arrayHabitacion.map(a => a.precio);
 
-let hSimple = preciosHab.slice(0,1);
-let hDoble = preciosHab.slice(1,2);
-let hTriple = preciosHab.slice(2,3);
-let hCuadruple = preciosHab.slice(3,4);
-let hSuite = preciosHab.slice(4,5);
-let hDuplex = preciosHab.slice(5,6);
+let hSimple = parseInt(JSON.stringify(arrayHabitacion[0].precio))
+let hDoble = parseInt(JSON.stringify(arrayHabitacion[1].precio));
+let hTriple = parseInt(JSON.stringify(arrayHabitacion[2].precio));
+let hCuadruple = parseInt(JSON.stringify(arrayHabitacion[3].precio));
+let hSuite = parseInt(JSON.stringify(arrayHabitacion[4].precio));
+let hDuplex = parseInt(JSON.stringify(arrayHabitacion[5].precio));
 
-let noches = localStorage.getItem('noches')
+// Valores del Storage
+let noches = parseInt(localStorage.getItem('noches'));
+let habitacion = localStorage.getItem('habitacion');
+ 
+function nights (){
 
-switch(noches){
-    case 1:cotizar(noches, hSimple)
-    break;
-    case 2:cotizar(noches, hDoble)
-    break;
-    case 3:cotizar(noches, hTriple)
-    break;
-    case 4:cotizar(noches, hCuadruple)
-    break;
-    case 5:cotizar(noches, hSuite)
-    break;
-    case 6:cotizar(noches, hDuplex)
-    break;
+    if (habitacion == "Habitación Simple") {
+        cotizar(noches, hSimple);
+        
+    }else if (habitacion == "Habitación Doble") {
+        cotizar(noches, hDoble);
+
+    }else if (habitacion == "Habitación Triple") {
+        cotizar(noches, hTriple);
+
+    }else if(habitacion == "Habitación Cuadruple"){
+        cotizar(noches, hCuadruple);
+
+    }else if (habitacion == "Suite"){
+        cotizar(noches, hSuite)
+
+    }else if (habitacion == "Duplex"){
+        cotizar(noches, hDuplex)       
+    }
 }
+
+// Funcion Refrescar
+
+const refrescar = () => { location.reload();}
+
+// Funcion Cotizar
+function cotizar  (noches, precio) {
+    let a = noches * precio;
+    let b = document.querySelector("#verPrecio");
+            b.innerHTML= `Precio de la estadía ${a}`;
+}
+
 let reservaCompleta = document.querySelector("#btn-cotizacion");
+                        reservaCompleta.addEventListener('click', nights);
 
-reservaCompleta.addEventListener('click', (evt)=>{
-    console.log(mulitplicacion());
-})
-
-const cotizar = (noches, precio) => {noches * precio}; */
+let botonRefrescar = document.querySelector("#btn-refrescar");
+                    botonRefrescar.addEventListener('click', refrescar);

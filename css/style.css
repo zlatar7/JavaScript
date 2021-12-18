@@ -1,7 +1,7 @@
 *{margin:0;
 padding: 0;}
 
-main{background: linear-gradient(white, rgba(255, 175, 100, 0.692));;}
+main{background-color: #ffd361f5;}
 
 header{position: absolute;
     z-index: 1;
@@ -10,7 +10,7 @@ header{position: absolute;
     width: 100%;
     height: 2.7em;}
 
-footer{background-color: rgba(255, 115, 0, 0.623);}
+footer{background-color: rgb(31, 31, 31);}
 
 ul{ font-size: 0.9em;}
 
@@ -20,23 +20,72 @@ ion-icon{ height: 1.5em;
 section{margin-right: 3em;
         margin-left: 3em;}
 
+h1{ color: rgb(209, 84, 0);
+text-align: center;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+text-decoration-line: underline;}
+
+h2{ color:rgb(255, 153, 0);
+-webkit-text-stroke: 0.9px black;
+text-align: center;
+text-decoration: underline 0.1em rgb(255, 153, 0);}
+
+h3{text-align: center;}
+
+h5{background-color: rgba(0, 0, 0, 0.5) ;
+width: fit-content;
+margin: auto;}
+
+p{color: rgb(70, 31, 0);}
+
+                                                                /* CLASES */
+
+
+.parrafoCarousel{background-color: rgba(0, 0, 0, 0.562);
+color: white;}
+
+.section{background-color: rgb(255 249 146);
+padding: 0px 20px 40px 20px;
+justify-self: center;
+justify-items: center;
+max-width: 700px;
+margin: auto;}
+
 .temp{color: green;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 text-align: center;
 margin-right:40px ;
 margin-left:40px ;}
 
-#menuCotizacion{background-color: rgb(255, 198, 93);}
+.divFooter{ text-align: center;
+        color: rgba(255, 255, 255, 0.829);
+}
+
+.divReserva{background-color: #ffd034;
+margin:auto;
+border-radius: 10px;}
+
+                                                                /* IDs */
+
+#divClima{max-width: 400px;
+max-height: 700px;
+background: rgba(255, 255, 255, 0.425);
+letter-spacing: 0.2em;
+font-size: 0.8em;}
+
+#sectionCarousel{padding: 0.5em 1em 0.5em 1em}
 
 #imagen{position:relative ;
         top:-2em;}
     
 #tituloImagen{color: rgb(255, 153, 0);
-background-color: rgba(95, 51, 0, 0.479);}
+background-color: rgba(95, 51, 0, 0.479);
+text-decoration: none;}
 
 #divRedes{display: flex;
           justify-content: space-evenly;
-          padding: 10px;}
+          padding: 10px;
+        color: rgba(255, 255, 255, 0.829);}
 
 #carouselSection{padding: 4em;}
 
@@ -46,15 +95,6 @@ background-color: rgba(95, 51, 0, 0.479);}
         text-align: center;
         padding: 5em;
         margin: auto;}
-
-#resultadoClima{background-color: rgba(190, 255, 160, 0.356);
-text-align: center;
-color: rgb(255, 94, 0);
-font-weight: bolder;}
-
-#btn-clima{margin-left:10px;
-        background: green;
-        color: white;}
 
 #btn-cargar{border: none;
         background:none;
@@ -71,4 +111,15 @@ padding: 1em;}
 
 #verPrecio{ height: 2em;
         background: white;
+}
+
+                                                /* MEDIA QUERY Pantallas medianas*/
+                                                
+@media screen and (min-width: 600px){
+#sectionCarousel{padding: 1em 9em 1em 9em;}
+}
+                                                /* MEDIA QUERY Pantallas grandes*/
+
+@media screen and (min-width: 992px){
+#sectionCarousel{padding: 1.5em 18em 1.5em 18em;}
 }

@@ -139,3 +139,56 @@ let reservaCompleta = document.querySelector("#btn-cotizacion");
 
 let botonRefrescar = document.querySelector("#btn-refrescar");
                     botonRefrescar.addEventListener('click', refrescar);
+
+                    //API DE ACCUWEATHER
+
+
+const apiKey = 'VjTLvbdq7O59OLPPoM3LISt6fjBovVAm';
+const brcKey = '1-5857_1_AL'
+
+const card = document.querySelector("#resultadoClima");
+//const detalles = document.querySelector("#")
+
+
+// función "MOSTRAR PRONÓSTICO EXTENDIDO"
+
+const mostrarClima = async (data) => {
+    
+    card.innerHTML = `<h3>BARILOCHE</h3>
+    <div>${data.Temperature}</div>
+    <div></div>
+    <div></div>
+    <div></div>`;
+}
+/* const btnMostrarClima = document.querySelector("#btn-clima")
+                        btnMostrarClima.addEventListener('click', mostrarClima)
+ */
+// función "OBTENER DATOS DEL CLIMA"
+
+const getWeather = async (id) => {
+    
+    const baseUrl = "http://dataservice.accuweather.com/currentconditions/v1/";
+    const query = `${id}?apikey=${apiKey}&metric=true`;
+
+    const respuesta = await fetch(baseUrl + query);
+    const data = await respuesta.json();
+   
+        return data[0];
+}
+
+// función "ELEGIR CIUDAD"
+
+const getCity = async (city) =>{
+    const baseUrl = "http://dataservice.accuweather.com/locations/v1/cities/search";
+    const query = `?apikey=${apiKey}&q=${city}`;
+
+    const respuesta = await fetch(baseUrl + query);
+    const data = await respuesta.json();
+    
+    return data[0];
+}
+/* 
+getCity('manchester').then(data => {
+    return getWeather(data.Key);
+}).then(data => {console.log(data);
+}).catch(error => console.log(error)); */

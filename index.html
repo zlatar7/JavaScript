@@ -18,7 +18,7 @@
               <a class="nav-link text-white" href="#calendar">MI RESERVA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#divRedes">CONTACTO</a>
+              <a class="nav-link text-white" href="#divFooter">CONTACTO</a>
             </li>
           </ul>
     </header>
@@ -39,33 +39,33 @@
                                   <!--- INFORMACIÓN PRINCIPAL --->                                     
 
      <div class="container">
-          <h1>BIENVENIDOS AL HOTEL ARRAYANES</h1>
+          <h1> BIENVENIDOS AL COMPLEJO DE HOSPEDAJES ARRAYANES</h1>
             <div class="row row-cols-2">
               <div class="col">
-                  <p>Somos un complejo de hospedajes ubicado en las afueras de la ciudad de Bariloche, a los pies de los cerro Otto y en las orillas del maravilloso lago Nahuel Huapi. Contamos con fácil acceso a la ciudad, a solo 5 km del centro. Tal es así que el famoso recorrido "Circuito Chico" pasa por nuestras puertas.</p>
+                  <p>Somos un complejo de hospedajes ubicado en las afueras de la ciudad de Bariloche, a los pies del cerro Otto y en las orillas del maravilloso lago Nahuel Huapi. Contamos con fácil acceso a la ciudad, a solo 5 km del centro. Tal es así que el famoso recorrido "Circuito Chico" pasa por nuestras puertas.</p>
               </div>
               <div id="divParrafo" class="col">
                 <p>Desde nuestro complejo salen numerosas excursiones y actividades recreativas. Visitar los sitios turísticos resulta ser mas que fácil y accesible, ideal para aquellos que les guste la aventura, recorrer y sumar nuevas experiencias.</p>
+              </div>
+              <div class="col">
+                <p>Ofrecemos una comodidad reconocida por todos nuestros clientes y unas vistas espléndidas desde nuestras habitaciones. La panorámica sobre los lagos Moreno y Nahuel Huapi son un gran atractivo de nuestra localización, también la noche brinda un paisaje distinto siendo otra gran seducción para los turistas que nos visitan.</p>
+              </div>
+              <div class="col">
+                <p>Lo mas destacado del lugar son los centros de esquí, visitados por turistas extranjeros y de todo el país. Contamos con transporte hacia los cerros, siendo tan solo unos minutos de viaje hasta las mencionadas pistas.</p>
                 <a href="#carouselExampleFade"><button id="btn-verActividades">ver actividades</button></a>
-            </div>
-              <div class="col">
-                  <p>Ofrecemos una comodidad reconocida por todos nuestros clientes y unas vistas espléndidas desde nuestras habitaciones. La panorámica sobre los lagos Moreno y Nahuel Huapi son un gran atractivo de nuestra localización, también la noche brinda un paisaje distinto siendo otra gran seducción para los turistas que nos visitan.</p>
-            </div>
-              <div class="col">
-                  <p>Lo mas destacado del lugar son los centros de esquí, visitados por turistas extranjeros y de todo el país. Contamos con transporte hacia los cerros, siendo solamente unos minutos de viajes a las mencionadas pistas.</p>
               </div>
               <div class="col" id="masInfo">
               </div>
             </div>
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    VER MAS DETALLES
+                <p class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed bg-warning bg-opacity-25" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Ver mas detalles
                   </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">Esta es toda la informacion completa que tenemos por el momento</div>
+                </p>
+                <div id="flush-collapseOne" class="accordion-collapse collapse bg-warning bg-opacity-25" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Tenemos multiples tipos de habitaciones, desde simples y dobles, hasta triples y cuadruples. Además de 3 duplex y 4 suites. </div>
                 </div>
               </div>
               </div>
@@ -74,8 +74,9 @@
 
                                       <!---CALENDARIO---->
 
-     <section class=" container-fluid " id="calendar">
-      <div class="container bg-warning bg-opacity-75 col-xl-6 col-12 col-sm-6"> 
+     <section class="section border rounded-3 border-1 border-dark" id="calendar">
+       <H2>ELIGE TU FECHA</H2>
+      <div class="col-xl-6 col-12 col-sm-6 divReserva" id="divReserva"> 
           <form class="row d-flex justify-content-center align-content-center">         
               <div class=" col-xl-6 col-6 col-sm-12">                                
                   <label for="check-in" class="form-label">Check-in</label>
@@ -109,8 +110,8 @@
   <hr>
                                         <!-- MI RESERVA -->
 
-<section class="bg-warning bg-opacity-75">
-  <div class="container">
+<section class="section border rounded-3 border-1 border-dark">
+  <div>
     <h2 class="text-center">MI RESERVA</h2>
     <div id="verMiReserva" class="container col-xl-10 col-sm-6 alert alert-light" role="alert">
       <p id="verCompleto"></p>
@@ -123,7 +124,7 @@
   <div id="divLimpiar">
     <button id="btn-limpiar" class="btn-sm btn-success border-0">Limpiar historial</button>
   </div>
-  <div class="container fluid bg-danger bg-opacity-25 col-xl-8">
+  <div class="container  col-xl-8 divReserva">
     <button id="btn-cotizacion" class="btn-sm btn-success border-0 m-2">VER PRECIO</button>
     <div id="verPrecio"></div>
     <button id="btn-refrescar" class="btn-sm btn-success border-0 m-2">BORRAR COTIZACION</button>
@@ -136,52 +137,79 @@
                           <!--- IMAGENES DE LAS HABITACIONES Y DESCRIPCIÓN --->
 
      <div class="card-group">
-            <div class="card foto m-3">
+            <div class="card foto m-3 border border-2 border-success rounded bg-light bg-opacity-50">
               <img src="archivos multimedia/hotel.jpg" class="card-img-top" alt="hotel">
               <div class="card-body">
-                <h5 class="card-title a">HOTEL ARRAYANES</h5>
+                <h3 class="card-title a">HOTEL ARRAYANES</h3>
                 <p class="card-text a">La localización y arribo al complejo es muy rápido y fácil. Del lado de la Avenida (a orillas del Lago Nahuel Huapi) está el frente, todo hecho con madera de Arrayanes manteniendo un estilo clásico de arquitectura en la Patagonia que se combina con lo nuevo y vanguardista del siglo XXI</p>
               </div>
 
             </div>
-            <div class="card foto1 m-3">
+            <div class="card foto1 m-3 border border-2 border-success rounded bg-light bg-opacity-50">
               <img src="archivos multimedia/hall.jpg" class="card-img-top" alt="hall">
               <div class="card-body b">
-                <h5 class="card-title">INTERIORES</h5>
+                <h3 class="card-title">INTERIORES</h3>
                 <p class="card-text b">Los visitantes pueden gozar de las instalaciones del complejo, las cuales contemplan las siguientes instalaciones y servicios: buffet, bar, sala de estar, Wi-Fi en todas las habitaciones, lavandería, patio, parrilla, habitaciones espaciosas, sommiers, entre tantas otras.</p>
               </div>
             </div>
 
-            <div class="card foto2 m-3">
+            <div class="card foto2 m-3 border border-2 border-success rounded bg-light bg-opacity-50">
               <img src="archivos multimedia/habitacion1.jpg" class="card-img-top" alt="habitacion1">
               <div class="card-body  c">
-                <h5 class="card-title">VISTA A LOS LAGOS</h5>
+                <h3 class="card-title">VISTA A LOS LAGOS</h3>
                 <p class="card-text c">Las habitaciones son testigos de los deslumbrantes lagos patagónicos. Además de poseer amplio espacio y luminosidad abundante.</p>
               </div>
 
             </div>
-            <div class="card foto3 m-3">
+            <div class="card foto3 m-3 border border-2 border-success rounded bg-light bg-opacity-50">
               <img src="archivos multimedia/hotel2.jpg" class="card-img-top" alt="hotel2">
               <div class="card-body d">
-                <h5 class="card-title">VISTA A LOS CERROS</h5>
+                <h3 class="card-title">VISTA A LOS CERROS</h3>
                 <p class="card-text d">En la base del cerro Otto se puede apreciar la temporada alta, no solo la inmensidad del lugar sino realizando deportes de invierno como el esquí, snowboard y muchos otros.</p>
               </div>
 
             </div>
      </div>
      <hr>
+
+                                          <!-- CLIMA (ajax) -->
+                                    
+  <div class="container my-5 mx-auto border border-2 rounded" id="divClima">
+
+    <h3 class="text-muted text-center my-4"></h3>
+
+   <form action="" class="change-location text-center text-muted my-4">
+     <label for="ciudad">INGRESE CIUDAD PARA VER EL CLIMA</label>
+     <input type="text" name="city" class="form-control p-4"">
+   </form>
+
+   <div class="card tarjeta shadow-lg rounded d-none"></div>
+   
+     <img src="https://via.placeholder.com/400x300" class="time card-img-top" alt="">
+     <div class="icon mx-auto text-center">
+       <img src="" alt="">
+     </div>
+     <div class="text-muted text-uppercase text-center details">
+       <h6 class="my-3">Ciudad</h6>
+       <div class="my-3">Clima de la ciudad</div>
+       <div class="display-4 my-4">
+        <span>Temperatura</span>
+        <span>&deg;C</span>
+       </div>  
+     </div>
+  </div>
      
                             <!--- DESCRIPCIÓN ADICIONAL--->
 
      <div class="container">
-        <div class="card rounded-3 foto1 m-4">
+        <div class="card rounded-3 foto1 m-4 border border-1 border-success rounded bg-light bg-opacity-50">
          <img src="./archivos multimedia/hotel3.jpg" alt="hotel afuera" class="a">
          <p>Nuestro complejo ubicado estratégicamente en la salida de la ciudad hacia los cerros (ver foto), posibilita muchas ventajas ya sea en cuanto a movilidad como la escapada de la
            contaminación lumínica, lo cual permite tener las mejores vistas de los cerros, bosques, lagos, y los cielos nocturnos. Contamos con amplia capacidad de hospedaje, y además
            el confort necesario para descansar y luego seguir en busca de aventura.
          </p>
         </div>
-        <div class="card foto2 m-4">
+        <div class="card foto2 m-4 border border-1 border-success rounded bg-light bg-opacity-50">
          <img src="./archivos multimedia/lago.jpg" alt="hotel balcon" class="b">
          <p>El parque nacional Nahuel Huapi (Isla del Jaguar) es una extensa área natural protegida.
           Es el más antiguo de los parques nacionales argentinos, ya que fue creado el 8 de abril de 1934,
@@ -195,12 +223,12 @@
         <div id="infoHabitacion">
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <p class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed bg-warning bg-opacity-25" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                 Ver mas Información
               </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse m-4" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            </p>
+            <div id="flush-collapseOne" class="accordion-collapse collapse bg-warning bg-opacity-25" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">La orientación del hotel es en dirección norte con una vista panorámica al Lago Nahuel Huapi. Donde se puede apreciar el famoso hotel de lujo Llao Llao (foto), que ademas fué y es sede de visitas presidenciales, se le suman los campos de golf.
                 Las opciones recreativas que presentan los diversos lagos son excelentes, desde excuriones en catamaran hasta kayak o rafting.
               </div>
@@ -212,75 +240,117 @@
 
                           <!--- CAROUSEL DE ACTIVIDADES Y EXCURSIONES--->
 
-
-    <section id="carouselSection" class="container">
-      <h2>ACTIVIDADES Y EXCURSIONES</h2>
-      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./archivos multimedia/actividad.jpg" class="d-block w-100" alt="Cerro catedral">
-            </div>
-            <div class="carousel-item">
-              <img src="./archivos multimedia/actividad1.jpg" class="d-block w-100" alt="Lago Nahuel Huapi">
-            </div>
-            <div class="carousel-item">
-              <img src="./archivos multimedia/actividad2.jpg" class="d-block w-100" alt="Catamaran">
-            </div>
-            <div class="carousel-item">
-              <img src="./archivos multimedia/actividad3.jpg" class="d-block w-100" alt="Rafting">
-            </div>
-            <div class="carousel-item">
-              <img src="./archivos multimedia/actividad4.jpg" class="d-block w-100" alt="Canopy">
-            </div>
-            <div class="carousel-item">
-              <img src="./archivos multimedia/actividad5.jpg" class="d-block w-100" alt="Parques Naturales">
-            </div>
-            <div class="carousel-item">
-              <img src="./archivos multimedia/actividad6.jpg" class="d-block w-100" alt="Centro Civico">
-            </div>
-            <div class="carousel-item">
-              <img src="./archivos multimedia/actividad7.jpg" class="d-block w-100" alt="Fabrica de chocolates">
-            </div>
-            <div class="carousel-item">
-              <img src="./archivos multimedia/actividad8.jpg" class="d-block w-100" alt="Chocolates">
-            </div>
+   <section id="sectionCarousel">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 9"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./archivos multimedia/actividad.jpg" class="d-block w-100" alt="Cerro catedral">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Cerro catedral</h5>
+            <p class="parrafoCarousel">El cerro mas conocido y visitado del país. Cuenta con pista de esquí, aerosillas, teleférico y centros de descanso</p>
+          </div>
         </div>
-        <button class="carousel-control-prev" id="botonPrev"  type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
-        </button>
-        <button class="carousel-control-next" id="botonNext" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
-        </button>
+        <div class="carousel-item">
+          <img src="./archivos multimedia/actividad1.jpg" class="d-block w-100" alt="Lago Nahuel Huapi">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Lago Nahuel Huapil</h5>
+            <p class="parrafoCarousel">Es el mas importante de la zona, y junto a otros, conforman un encadenamiento de lagos donde la navegacion, recreacion y paisajes; es el disfrute de todos los visitantes y lugareños</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./archivos multimedia/actividad2.jpg" class="d-block w-100" alt="Catamaran">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Catamaran a Puerto Blest</h5>
+            <p class="parrafoCarousel">Viaje hacia la frontera con destino a Puerto Blest (Chile), surcando las aguas de los lagos patagónicos a orillas de cerros imponentes.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./archivos multimedia/actividad3.jpg" class="d-block w-100" alt="Rafting">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Rafting</h5>
+            <p class="parrafoCarousel">Actividades acuáticas como el rafting es ideal para experimentar la aventura que ofrece Bariloche.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./archivos multimedia/actividad4.jpg" class="d-block w-100" alt="Canopy">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Canopy</h5>
+            <p class="parrafoCarousel">Actividad recreativa como canopy o tirolesa están presentes en los bosques y cerros aledaños a la ciudad. Buena opción de aventura, complementaria a hiking</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./archivos multimedia/actividad5.jpg" class="d-block w-100" alt="Parques Naturales">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Parques Naturales</h5>
+            <p class="parrafoCarousel">Hacer senderismo y explorar las bellezas naturales de los cerros y bosques, es la gran sugerencia de cualquier persona que haya visitado nuestra ciudad, ya que todo se encuentra diseñado para esto.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./archivos multimedia/actividad6.jpg" class="d-block w-100" alt="Centro Civico">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Centro Civicol</h5>
+            <p class="parrafoCarousel">La plaza principal, el centro cívico y el centro comercial, es la postal que todo el mundo debe tener siendo una parada obligatoria para cualquier viajero.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./archivos multimedia/actividad7.jpg" class="d-block w-100" alt="Fabrica de chocolates">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Fabrica de chocolates</h5>
+            <p class="parrafoCarousel">Las visitas guiadas a las fábricas de chocolate son imperdibles y demasiado tentadoras. Son años de tradición y vigencia, que garantizan y demuestran la exelente calidad de los productos</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./archivos multimedia/actividad8.jpg" class="d-block w-100" alt="Chocolates">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Chocolates</h5>
+            <p class="parrafoCarousel">Degustación de los mejores chocolates de la región.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    </section>
 
-                                     <!-- CLIMA (ajax con jquery) -->
-                                    
-  <div id="resultadoClima">PRONÓSTICO EXTENDIDO PARA LOS PRÓXIMOS 5 DÍAS
-  <button id="btn-clima">VER PRONÓSTICO</button>
-  </div>
+   </section>
 
   </main>
 
     <footer>
         <div id="divRedes">
-          <div>
-            <ion-icon name="logo-instagram" class="divRedes"></ion-icon>
-            <p>@ArrayanesBrc</p>
+          <div class="divFooter">
+           <ion-icon name="logo-instagram"></ion-icon>
+           <p class="divFooter">@ArrayanesBrc</p>
           </div>
-          <div> <ion-icon name="logo-facebook" class="divRedes"></ion-icon>
-            <p>Arrayanes_bariloche</p>
+          <div class="divFooter">
+           <ion-icon name="logo-facebook"></ion-icon>
+           <p class="divFooter">Arrayanes_bariloche</p>
           </div>
-         <div>
-           <ion-icon name="logo-whatsapp" class="divRedes"></ion-icon>
-          <p>011-157856921</p>
+         <div class="divFooter">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+          <p class="divFooter">011-157856921</p>
         </div>         
         </div>
         
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/appClima.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -325,12 +395,9 @@
 
       //API DE ACCUWEATHER AJAX CON JQUERY 
 
-    const result = $("#resultadoClima");
-    const apiKey = 'VjTLvbdq7O59OLPPoM3LISt6fjBovVAm';
-    const brcKey = '1-5857_1_AL'
-    const url = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/1-5857_1_AL?apikey=VjTLvbdq7O59OLPPoM3LISt6fjBovVAm&details=true"    
+        
    
-    //funcion obtener clima de la API
+   /*  //funcion obtener clima de la API
 
      function getWeather (){
         
@@ -379,21 +446,7 @@ const displayList = (jsonObject1) =>{
               <br>`)      
             
       });
-}
-
-// funcion para convertir a grados Celsius (C°)
-
-function convertirCelsius (e) {
-  let F = e;
-  let C = (e-32)*(5/9);
-  let grados = C.toFixed(1);
-  return grados;
-}
-
-// Boton para ver el clima
-
-$("#btn-clima").one('click', jQueryData);
-
+}*/
     </script>
 </body>
 </html>

@@ -1,14 +1,14 @@
                     // ARRAY DE OBJETOS CON LAS HABITACIONES
 
-const arrayHabitacion = [ {nombre: "SIMPLE", capacidad: 1, disponible: true, precio: 1000},
-                    {nombre: "DOBLE", capacidad: 2, disponible: false, precio: 1300},
-                    {nombre: "TRIPLE", capacidad: 3, disponible: false, precio: 1600},
-                    {nombre: "CUADRUPLE", capacidad: 4, disponible: false, precio: 2000},
-                    {nombre: "SUITE", capacidad: 2, disponible: true, precio: 2500},
-                    {nombre: "DUPLEX", capacidad: 4, disponible: true, precio: 3100}];
+const arrayHabitacion = [ {nombre: "SIMPLE", capacidad: 1, precio: 1000},
+                    {nombre: "DOBLE", capacidad: 2, precio: 1300},
+                    {nombre: "TRIPLE", capacidad: 3, precio: 1600},
+                    {nombre: "CUADRUPLE", capacidad: 4, precio: 2000},
+                    {nombre: "SUITE", capacidad: 2, precio: 2500},
+                    {nombre: "DUPLEX", capacidad: 4, precio: 3100}];
 
                     
-                            // CALENDARIO
+                            // SECTION CALENDARIO
 
 //Check-in
 
@@ -16,7 +16,7 @@ let inputCalendario = document.querySelector("#check-in")
 
     inputCalendario.addEventListener('change', (evt) => {
         let ingreso = `${evt.target.value}`;
-        localStorage.setItem('fechaIngreso', ingreso)
+        sessionStorage.setItem('fechaIngreso', ingreso)
 
         let infoIngreso = document.querySelector("#miFechaI");
         infoIngreso.innerHTML = `- Fecha de entrada: ${ingreso}`
@@ -28,7 +28,7 @@ let selectHospedaje= document.querySelector("#hospedaje");
             
  selectHospedaje.addEventListener('change', (evt)=> {
     let habitacion = `${evt.target.value}`;
-    localStorage.setItem('habitacion', habitacion)
+    sessionStorage.setItem('habitacion', habitacion)
 
     let infobuscar = document.querySelector("#miHabitacion");
        infobuscar.innerHTML = `- ${habitacion}`
@@ -41,7 +41,7 @@ inputNoches = document.querySelector("#noches");
 inputNoches.addEventListener('change', (evt)=>{
 
     let noches = `${evt.target.value}`;
-    localStorage.setItem('noches', noches)
+    sessionStorage.setItem('noches', noches)
 
     let infoNoches = document.querySelector("#miNoches");
     infoNoches.innerHTML = `- ${noches} noche(s)`;
@@ -62,10 +62,10 @@ let btnCargar = document.querySelector("#btn-cargar");
 
 btnCargar.addEventListener('click', () => {
 
-    if (localStorage.length != 0){
-    let miFechaIngreso = localStorage.getItem('fechaIngreso')
-    let mihabitacion = localStorage.getItem('habitacion')
-    let miNoches = localStorage.getItem('noches')
+    if (sessionStorage.length != 0){
+    let miFechaIngreso = sessionStorage.getItem('fechaIngreso')
+    let mihabitacion = sessionStorage.getItem('habitacion')
+    let miNoches = sessionStorage.getItem('noches')
     let infoReserva = document.querySelector("#verMiReserva");
     infoReserva.innerHTML =`Su consulta es por ${mihabitacion}, a partir de la fecha ${miFechaIngreso}, por un total de: ${miNoches} noche(s)`;
     }else{
@@ -74,121 +74,91 @@ btnCargar.addEventListener('click', () => {
     }
 })
 
-//Boton "limpiar" del calendario (limpia el storage)
-
-let btnLimpiar = document.querySelector("#btn-limpiar");
-
-btnLimpiar.addEventListener('click', limpiarStorage)
-
-function limpiarStorage () {
-localStorage.clear();
-location.reload();
-}
-
                         //FUNCIONES COTIZAR ESTADIA
 
 // Precios de las habitaciones
-const preciosHab = arrayHabitacion.map(a => a.precio);
 
-let hSimple = parseInt(JSON.stringify(arrayHabitacion[0].precio))
-let hDoble = parseInt(JSON.stringify(arrayHabitacion[1].precio));
-let hTriple = parseInt(JSON.stringify(arrayHabitacion[2].precio));
-let hCuadruple = parseInt(JSON.stringify(arrayHabitacion[3].precio));
-let hSuite = parseInt(JSON.stringify(arrayHabitacion[4].precio));
-let hDuplex = parseInt(JSON.stringify(arrayHabitacion[5].precio));
+let hSimple = arrayHabitacion[0].precio;
+let hDoble = arrayHabitacion[1].precio;
+let hTriple = arrayHabitacion[2].precio;
+let hCuadruple = arrayHabitacion[3].precio;
+let hSuite = arrayHabitacion[4].precio;
+let hDuplex = arrayHabitacion[5].precio;
 
 // Valores del Storage
-let noches = parseInt(localStorage.getItem('noches'));
-let habitacion = localStorage.getItem('habitacion');
- 
-function nights (){
 
-    if (habitacion == "Habitación Simple") {
-        cotizar(noches, hSimple);
-        
-    }else if (habitacion == "Habitación Doble") {
-        cotizar(noches, hDoble);
+let noches = parseInt(sessionStorage.getItem('noches'));
+let habitacion = sessionStorage.getItem('habitacion');
 
-    }else if (habitacion == "Habitación Triple") {
-        cotizar(noches, hTriple);
+// Funcion para imprimir el precio en el DOM
 
-    }else if(habitacion == "Habitación Cuadruple"){
-        cotizar(noches, hCuadruple);
-
-    }else if (habitacion == "Suite"){
-        cotizar(noches, hSuite)
-
-    }else if (habitacion == "Duplex"){
-        cotizar(noches, hDuplex)       
-    }
+function imprimir (precio) {
+    let parrafo = document.querySelector("#verPrecio");
+    parrafo.innerHTML = `${precio}`;
 }
 
-// Funcion Refrescar
+//Función de cotización ()
 
-const refrescar = () => { location.reload();}
+const cotizar = (a , b) => a * b;
 
-// Funcion Cotizar
-function cotizar  (noches, precio) {
-    let a = noches * precio;
-    let b = document.querySelector("#verPrecio");
-            b.innerHTML= `Precio de la estadía ${a}`;
+
+// Funcion "night", valida entradas. Aplica "cotizar" e "imprimir"
+
+function nights (tipoHabitacion){
+
+if (tipoHabitacion == "Habitación Simple") {
+    let simple = cotizar(noches, hSimple);
+    imprimir(simple);
+
+}else if (tipoHabitacion == "Habitación Doble") {
+   let doble = cotizar(noches, hDoble);
+    imprimir(doble);
+
+}else if (tipoHabitacion == "Habitación Triple") {
+    let triple = cotizar(noches, hTriple);
+    imprimir(triple);
+
+}else if(tipoHabitacion == "Habitación Cuadruple"){
+    let cuadruple = cotizar(noches, hCuadruple);
+    imprimir(cuadruple);
+
+}else if (tipoHabitacion == "Suite"){
+    let suite = cotizar(noches, hSimple);
+    imprimir(suite);
+
+}else if (tipoHabitacion == "Duplex"){
+    let duplex = cotizar(noches, hDuplex);
+    imprimir(duplex);     
+}
 }
 
-let reservaCompleta = document.querySelector("#btn-cotizacion");
-                        reservaCompleta.addEventListener('click', nights);
+                            //BOTONES DEL SECTION "MI RESERVA"
 
-let botonRefrescar = document.querySelector("#btn-refrescar");
-                    botonRefrescar.addEventListener('click', refrescar);
+// boton para "VER PRECIO"
 
-                    //API DE ACCUWEATHER
-
-
-const apiKey = 'VjTLvbdq7O59OLPPoM3LISt6fjBovVAm';
-const brcKey = '1-5857_1_AL'
-
-const card = document.querySelector("#resultadoClima");
-//const detalles = document.querySelector("#")
+let refrescar = document.querySelector("#btn-cotizacion");
+refrescar.addEventListener('click', ()=>{location.reload();} );
+ let reservaCompleta = document.querySelector("#btn-cotizacion");
+                        reservaCompleta.addEventListener('click', nights(habitacion));
 
 
-// función "MOSTRAR PRONÓSTICO EXTENDIDO"
 
-const mostrarClima = async (data) => {
-    
-    card.innerHTML = `<h3>BARILOCHE</h3>
-    <div>${data.Temperature}</div>
-    <div></div>
-    <div></div>
-    <div></div>`;
+
+//Boton de "BORRAR COTIZACIÓN"
+
+let botonBorrar = document.querySelector("#btn-refrescar");
+
+    botonBorrar.addEventListener('click', () => {
+        let a = document.querySelector("#verPrecio");
+        a.innerHTML = "";
+});
+
+//Boton "LIMPIAR HISTORIAL" (limpia el storage)
+
+let btnLimpiar = document.querySelector("#btn-limpiar");
+btnLimpiar.addEventListener('click', limpiarStorage)
+
+
+function limpiarStorage () {
+sessionStorage.clear();
 }
-/* const btnMostrarClima = document.querySelector("#btn-clima")
-                        btnMostrarClima.addEventListener('click', mostrarClima)
- */
-// función "OBTENER DATOS DEL CLIMA"
-
-const getWeather = async (id) => {
-    
-    const baseUrl = "http://dataservice.accuweather.com/currentconditions/v1/";
-    const query = `${id}?apikey=${apiKey}&metric=true`;
-
-    const respuesta = await fetch(baseUrl + query);
-    const data = await respuesta.json();
-   
-        return data[0];
-}
-
-// función "ELEGIR CIUDAD"
-
-const getCity = async (city) =>{
-    const baseUrl = "http://dataservice.accuweather.com/locations/v1/cities/search";
-    const query = `?apikey=${apiKey}&q=${city}`;
-
-    const respuesta = await fetch(baseUrl + query);
-    const data = await respuesta.json();
-    
-    return data[0];
-}
-/* 
-getCity('manchester').then(data => {
-    return getWeather(data.Key);
-}).then(data => {console.log(data);
-}).catch(error => console.log(error)); */

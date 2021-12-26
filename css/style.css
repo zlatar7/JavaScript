@@ -8,17 +8,11 @@ header{position: absolute;
     background-color: rgba(255, 115, 0, 0.623) ;
     justify-content: stretch;
     width: 100%;
-    height: 2.7em;}
+    height: 8%;}
 
-footer{background-color: rgb(31, 31, 31);}
+footer{background-color: rgb(255 167 67);}
 
 ul{ font-size: 0.9em;}
-
-ion-icon{ height: 1.5em;
-          width: 1.5em;}
-
-section{margin-right: 3em;
-        margin-left: 3em;}
 
 h1{ color: rgb(209, 84, 0);
 text-align: center;
@@ -30,19 +24,20 @@ h2{ color:rgb(255, 153, 0);
 text-align: center;
 text-decoration: underline 0.1em rgb(255, 153, 0);}
 
-h3{text-align: center;}
+h3{text-align: center;
+color:rgb(80, 42, 11);}
 
 h5{background-color: rgba(0, 0, 0, 0.5) ;
 width: fit-content;
 margin: auto;}
 
-p{color: rgb(70, 31, 0);}
+p{color: rgb(80, 42, 11);}
 
-                                                                /* CLASES */
+                        /*------------------------ CLASES -----------------------*/
 
 
-.parrafoCarousel{background-color: rgba(0, 0, 0, 0.562);
-color: white;}
+.divFooter{ text-align: center;
+justify-content: space-evenly;}
 
 .section{background-color: rgb(255 249 146);
 padding: 0px 20px 40px 20px;
@@ -51,75 +46,115 @@ justify-items: center;
 max-width: 700px;
 margin: auto;}
 
-.temp{color: green;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-text-align: center;
-margin-right:40px ;
-margin-left:40px ;}
+.imgFooter{max-height: 1.2em;
+max-width: 1.2em;
+color: rosybrown;}
 
-.divFooter{ text-align: center;
-        color: rgba(255, 255, 255, 0.829);
-}
+.parrafoIconos{font-size: 0.9em;}
 
-.divReserva{background-color: #ffd034;
+.parrafoCarousel{background-color: rgba(0, 0, 0, 0.562);
+color: white;}
+
+                                        /* EFECTOS CON HOVER */
+
+.card-group p:hover{color: rgb(98, 151, 98);}
+
+.card-group h3:hover{color: rgb(98, 151, 98);}
+
+
+                 /* ------------------------- IDs ---------------------------- */
+
+
+        /* Divs y contenedores */
+
+
+#divReserva{background-color: #ffb944;
 margin:auto;
-border-radius: 10px;}
-
-                                                                /* IDs */
+border-radius: 10px;
+padding-bottom: 20px;}
 
 #divClima{max-width: 400px;
-max-height: 700px;
+max-height: 800px;
 background: rgba(255, 255, 255, 0.425);
 letter-spacing: 0.2em;
 font-size: 0.8em;}
 
-#sectionCarousel{padding: 0.5em 1em 0.5em 1em}
-
-#imagen{position:relative ;
-        top:-2em;}
-    
-#tituloImagen{color: rgb(255, 153, 0);
-background-color: rgba(95, 51, 0, 0.479);
-text-decoration: none;}
+#divPronostico{background-image:url(../archivos\ multimedia/fondo.jpg);
+background-size: cover;
+width:auto;
+padding-bottom: 5px;}
 
 #divRedes{display: flex;
-          justify-content: space-evenly;
-          padding: 10px;
-        color: rgba(255, 255, 255, 0.829);}
-
-#carouselSection{padding: 4em;}
-
-#rooms{display: flex;
-        flex-direction: column;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        text-align: center;
-        padding: 5em;
-        margin: auto;}
-
-#btn-cargar{border: none;
-        background:none;
-        color: green;}
-
-#btn-verActividades{border: none;
-        background:none;
-        font-weight: bolder;
-        color: green;}
+justify-content: space-evenly;
+padding-top: 10px;}
 
 #divLimpiar{display: flex;
 justify-content: center;
-padding: 1em;}
+padding-top: 0.5em;}
+
+#sectionCarousel{padding: 0.5em 1em 0.5em 1em}
 
 #verPrecio{ height: 2em;
-        background: white;
+background: white;}
+
+
+        /* Parrafos y títulos */
+
+
+#parrafoClima{color: rgba(206, 110, 0, 0.938);
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+text-align: center;
+-webkit-text-stroke: 0.5px black;
+margin: auto;
+width: fit-content;}
+
+#parrafoDia {color: #2e2e2e;
+width: min-content;
+margin: auto;
+font-family: system-ui;
+font-size: 1.5em;
+font-weight: 500;
+letter-spacing: initial;
 }
 
-                                                /* MEDIA QUERY Pantallas medianas*/
+#tituloImagen{color: rgb(255, 153, 0);
+background-color: rgba(95, 51, 0, 0.479);
+text-decoration: none;
+font-size: 1.2em;}
+
+#tituloPronostico{ text-decoration: none;
+color: rgba(206, 110, 0, 0.938)}
+
+
+        /* Botones */
+
+
+#btn-cargar{border: none;
+background:none;
+color: green;}
+
+#btn-verActividades{border: none;
+background:none;
+font-weight: bolder;
+color: green;}
+
+        /* -------- */
+
+#imagen{position:relative ;
+top:-2em;
+margin: 0;}
+
+
+
+                /* ----------------- MEDIA QUERY Pantallas medianas -------------------- */
                                                 
 @media screen and (min-width: 600px){
 #sectionCarousel{padding: 1em 9em 1em 9em;}
 }
-                                                /* MEDIA QUERY Pantallas grandes*/
+
+
+                /* ------------------ MEDIA QUERY Pantallas grandes --------------------- */
 
 @media screen and (min-width: 992px){
-#sectionCarousel{padding: 1.5em 18em 1.5em 18em;}
+#sectionCarousel{padding: 1.5em 19em 1.5em 19em;}
 }
